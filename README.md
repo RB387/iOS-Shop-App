@@ -1,6 +1,6 @@
 # iOS-Shop-App
 
-JSON request + Multithreading (GCD)
+JSON request + Multithreading (GCD).  
 In development...
 
 ## Main Screen
