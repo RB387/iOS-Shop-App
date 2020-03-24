@@ -1,5 +1,7 @@
 # iOS-Shop-App
 
+JSON request + Multithreading (GCD)
+
 ## Main Screen
 ![Main Screen Screenshot](https://github.com/RB387/iOS-Shop-App/blob/master/git-img/categories.png?raw=true)
 
