@@ -14,6 +14,8 @@
 		173DC0E3242A34010083C032 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DC0E2242A34010083C032 /* ProductListViewController.swift */; };
 		173DC0E5242A34210083C032 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DC0E4242A34210083C032 /* ProductListModel.swift */; };
 		173DC0E7242A345C0083C032 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DC0E6242A345C0083C032 /* ProductViewCell.swift */; };
+		1784E116242F5087007F5034 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784E115242F5087007F5034 /* ProductViewController.swift */; };
+		1784E11B242F5DD4007F5034 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784E11A242F5DD4007F5034 /* GalleryViewController.swift */; };
 		17A8BFED2421155500C805CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8BFEC2421155500C805CE /* AppDelegate.swift */; };
 		17A8BFEF2421155500C805CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8BFEE2421155500C805CE /* SceneDelegate.swift */; };
 		17A8BFF12421155500C805CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8BFF02421155500C805CE /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 		173DC0E2242A34010083C032 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		173DC0E4242A34210083C032 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		173DC0E6242A345C0083C032 /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		1784E115242F5087007F5034 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		1784E11A242F5DD4007F5034 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		17A8BFE92421155500C805CE /* BlackStarShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A8BFEC2421155500C805CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A8BFEE2421155500C805CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,23 @@
 			path = ProductListView;
 			sourceTree = "<group>";
 		};
+		1784E114242F5060007F5034 /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				1784E119242F5DB5007F5034 /* GalleryView */,
+				1784E115242F5087007F5034 /* ProductViewController.swift */,
+			);
+			path = ProductView;
+			sourceTree = "<group>";
+		};
+		1784E119242F5DB5007F5034 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				1784E11A242F5DD4007F5034 /* GalleryViewController.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
 		17A8BFE02421155500C805CE = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +155,7 @@
 		17A8BFEB2421155500C805CE /* BlackStarShop */ = {
 			isa = PBXGroup;
 			children = (
+				1784E114242F5060007F5034 /* ProductView */,
 				17D4532B242A54190013948C /* SubcategoriesView */,
 				173DC0E1242A33CD0083C032 /* ProductListView */,
 				17E8620C2429FE8B005BF25E /* CategoryView */,
@@ -309,6 +331,8 @@
 				173DC0E7242A345C0083C032 /* ProductViewCell.swift in Sources */,
 				17E8620E2429FEBB005BF25E /* Model.swift in Sources */,
 				173DC0E3242A34010083C032 /* ProductListViewController.swift in Sources */,
+				1784E11B242F5DD4007F5034 /* GalleryViewController.swift in Sources */,
+				1784E116242F5087007F5034 /* ProductViewController.swift in Sources */,
 				17B2C96F242A00B2005E9693 /* CategoryViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

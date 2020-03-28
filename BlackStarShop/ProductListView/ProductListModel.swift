@@ -32,10 +32,10 @@ class ProductListModel{
         self.category = category
     }
     
-    func fetchData(_ completion: @escaping (_ data: [Product]) -> ()){
+    func fetchData(_ completion: @escaping (_ data: [String: Product]) -> ()){
         let url = "https://blackstarshop.ru/index.php?route=api/v1/products&cat_id=\(category)"
         AF.request(url).responseJSON(completionHandler: { response in
-            var products = [Product]()
+            var products = [String: Product]()
             if let data = response.value as? [String: [String: Any]]{
                 for (key, product) in data{
                     if let name = product["name"] as? String,
@@ -55,7 +55,7 @@ class ProductListModel{
                                 images.append(imageUrl)
                             }
                         }
-                        products.append(Product(id: key, name: name, article: article, description: description, colorName: colorName, colorImageURL: colorImageURL, mainImage: mainImage, productImages: images, offers: offers, recommendedProductIDs: recommendedProductIDs, price: price, attributes: attributes))
+                        products[key] = Product(id: key, name: name, article: article, description: description, colorName: colorName, colorImageURL: colorImageURL, mainImage: mainImage, productImages: images, offers: offers, recommendedProductIDs: recommendedProductIDs, price: price, attributes: attributes)
                     }
                 }
             } else {
