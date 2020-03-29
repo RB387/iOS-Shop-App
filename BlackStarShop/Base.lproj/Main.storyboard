@@ -117,7 +117,7 @@
         <!--Корзина-->
         <scene sceneID="9Xm-n6-n1n">
             <objects>
-                <viewController id="si4-fj-wWF" sceneMemberID="viewController">
+                <viewController id="si4-fj-wWF" customClass="ShoppingCartViewController" customModule="BlackStarShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0t-9j-W8r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Tsi-g9-lbz">
                                         <rect key="frame" x="8" y="16" width="359" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcs-4L-402">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итого:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcs-4L-402">
                                                 <rect key="frame" x="0.0" y="0.0" width="179.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -176,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="473"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="utS-Is-2jP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartCell" id="utS-Is-2jP" customClass="CartTableViewCell" customModule="BlackStarShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="utS-Is-2jP" id="5dd-q0-gWK">
@@ -219,6 +219,9 @@
                                                         <constraint firstAttribute="width" secondItem="GSv-IR-BiG" secondAttribute="height" id="yqB-QU-DVN"/>
                                                     </constraints>
                                                     <state key="normal" image="delete"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonClick:" destination="utS-Is-2jP" eventType="touchUpInside" id="PlH-Ks-beo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -239,8 +242,18 @@
                                                 <constraint firstItem="ops-mx-IET" firstAttribute="leading" secondItem="4kg-ZJ-7xD" secondAttribute="trailing" constant="8" id="xvc-jk-1qv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="colorLabel" destination="hMs-xa-zyY" id="Bkv-8X-tfH"/>
+                                            <outlet property="logoVIew" destination="4kg-ZJ-7xD" id="wxw-Fx-iQG"/>
+                                            <outlet property="priceLabel" destination="J4v-03-DIU" id="6b8-MS-fAw"/>
+                                            <outlet property="sizeLabel" destination="ops-mx-IET" id="j1u-t9-Ukd"/>
+                                            <outlet property="titleLabel" destination="aGb-jL-14K" id="HVX-tY-C8b"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="si4-fj-wWF" id="5nK-cZ-oyp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -256,6 +269,11 @@
                         <viewLayoutGuide key="safeArea" id="ax9-eI-eM1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Корзина" id="UoD-90-A0S"/>
+                    <connections>
+                        <outlet property="orderButton" destination="HVX-tq-fVB" id="nyq-TM-1GK"/>
+                        <outlet property="tableView" destination="Oem-Yj-Azn" id="fkr-nZ-P2H"/>
+                        <outlet property="totalPriceLabel" destination="7Qf-Re-AFE" id="bdA-qj-P6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfy-Ob-knR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -493,7 +511,7 @@
                         <outlet property="priceLabel" destination="WTT-3W-6gN" id="qkz-9K-HHi"/>
                         <outlet property="scrollView" destination="rox-Ym-dAA" id="p2K-f0-PqJ"/>
                         <outlet property="titleLabel" destination="DhW-OX-vTR" id="SYz-su-lAW"/>
-                        <segue destination="si4-fj-wWF" kind="show" id="GOP-2E-vhT"/>
+                        <segue destination="si4-fj-wWF" kind="show" identifier="showCart" id="GOP-2E-vhT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpo-Oi-h40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

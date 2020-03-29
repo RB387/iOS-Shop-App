@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct Product{
+struct Product {
     var id: String
     var name: String
     var article: String
